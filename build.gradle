@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+apply plugin: 'war'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+    //api 'org.apache.commons:commons-math3:3.6.1'
+    implementation 'com.google.guava:guava:23.0'
+    testImplementation 'junit:junit:4.12'
+	
+	// guice dependency
+	implementation group: 'com.google.inject', name: 'guice', version: '4.2.2'
+	
+	// guice-servlet dependency 
+	implementation group: 'com.google.inject.extensions', name: 'guice-servlet', version: '4.0'
+	
+	// Servlet dependency gradle
+	compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
+}
+
+mainClassName = 'Library' 
